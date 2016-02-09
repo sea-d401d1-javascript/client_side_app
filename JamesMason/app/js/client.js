@@ -1,9 +1,6 @@
 'use strict';
-const angular = require('angular'); // eslint-disable-line
-const moment = require('moment'); // eslint-disable-line
-// window.setInterval(function() {
-//   console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
-// }, 250);
+const angular = require('angular');
+const moment = require('moment');
 angular.module('clock', [])
   .controller('clockController', ['$scope',
     function($scope) {
