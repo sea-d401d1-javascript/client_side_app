@@ -1,0 +1,22 @@
+{
+  "name": "jessethach",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.5.0",
+    "gulp": "^3.9.1",
+    "webpack": "^1.12.13",
+    "webpack-stream": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "moment": "^2.11.2"
+  }
+}
