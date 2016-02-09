@@ -5,8 +5,12 @@
     <title></title>
   </head>
   <body data-ng-app>
-    <h1>{{greeting}}</h1>
-    <input type="text" data-ng-model="greeting">
+    <h1 style="font-size:100px; text-align:center;">Welcome!</h1>
+    <h1 id="day" style="text-align:center;"></h1>
+    <h1 id="time" style="text-align:center"></h1>
+    <h1>Hello {{name}}</h1>
+
+      <input type="text" data-ng-model="name" placeholder="Enter your name">
 
     <script src="bundle.js"></script>
   </body>

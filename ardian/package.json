@@ -9,7 +9,8 @@
   "author": "ardian",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "moment": "^2.11.2"
   },
   "devDependencies": {
     "angular": "^1.5.0",
