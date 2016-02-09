@@ -1,0 +1,21 @@
+{
+  "name": "chris_lee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "angular": "^1.5.0",
+    "gulp": "^3.9.1",
+    "moment": "^2.11.2",
+    "webpack-stream": "^3.1.0"
+  }
+}
