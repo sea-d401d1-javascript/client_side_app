@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Client Side App</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <link href='/css/style.css' rel='stylesheet' type='text/css'>
+  </head>
+  <body data-ng-app>
+    <h1>Hello there, {{username}}!</h1>
+    <h2>The current time is: </h2>
+    <h2 id='time'></h2>
+    <input type='text' placeholder='What is your name?' data-ng-model='username'/>
+    <script src='bundle.js'></script>
+  </body>
+</html>
