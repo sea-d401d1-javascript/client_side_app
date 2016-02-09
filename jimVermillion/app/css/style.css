@@ -1,0 +1,13 @@
+body {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/d/d9/Florida_Box_Turtle_Digon3a.jpg);
+    background-size: cover;
+}
+#time {
+  color: white;
+  background-color: gray;
+  border: black 2px solid;
+  border-radius: 10px;
+  margin: 20%;
+  padding: 20px 0;
+  text-align: center;
+}
