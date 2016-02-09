@@ -1,0 +1,21 @@
+{
+  "name": "rob_merrill",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "jquery": "^2.2.0",
+    "moment": "^2.11.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "webpack-stream": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
