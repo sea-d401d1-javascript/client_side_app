@@ -5,8 +5,12 @@
     <title></title>
   </head>
   <body data-ng-app>
-    <h1>{{greeting}}</h1>
-    <input type="text" data-ng-model="greeting">
-    <script src = "bundle.js"></script>
+    <div ng-app="myApp">
+      <div ng-controller="time">
+        Date format: <input ng-model="format" /> <hr/>
+        Current time is: <span my-current-time="format"></span>
+      </div>
+   </div>
+  <script src = "bundle.js"></script>
   </body>
 </html>
