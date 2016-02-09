@@ -1,0 +1,21 @@
+{
+  "name": "inclassfront",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "KrisHughes <kristopher_hughes@yahoo.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "angular": "1.5.0",
+    "gulp": "3.9.1",
+    "gulp-eslint": "1.1.1",
+    "webpack-stream": "3.1.0"
+  },
+  "dependencies": {
+    "moment": "2.11.2"
+  }
+}
