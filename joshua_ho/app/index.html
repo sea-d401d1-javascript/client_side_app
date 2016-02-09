@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Second WebPack App with some Angular stuff</title>
+  </head>
+
+  <!-- Angular is funcional as of 11:14 AM -->
+
+  <body data-ng-app>
+    <div>
+      <h1>Hello. The time is
+      <script type="text/javascript">
+        moment().format('MMMM Do YYYY, h:mm:ss a');
+      </script>
+      </h1>
+    </div>
+    <h1>{{greeting}}</h1>
+    <input type="text" data-ng-model="greeting">
+    <script type="text/javascript" src="bundle.js"></script>
+  </body>
+</html>
