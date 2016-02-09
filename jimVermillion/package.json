@@ -1,0 +1,20 @@
+{
+  "name": "jimVermillion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "James Vermillion <jamesvermillion@yahoo.com> (https://github.com/jamesvermillion)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "moment": "^2.11.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "webpack-stream": "^3.1.0"
+  }
+}
