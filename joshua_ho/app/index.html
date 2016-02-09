@@ -17,13 +17,5 @@
     <h1>{{greeting}}</h1>
     <input type="text" data-ng-model="greeting">
     <script type="text/javascript" src="bundle.js"></script>
-    <script type="text/javascript" data-ng-model="time">
-      function getTime () {
-        var time = moment().format('MMMM Do YYYY, h:mm:ss a');
-        return time;
-        console.log('Time Got-ted');
-      }
-      getTime();
-    </script>
   </body>
 </html>
