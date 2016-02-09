@@ -1,0 +1,51 @@
+html {
+  font-family: 'Titillium Web', sans-serif;
+  background: url(http://www.freeimageslive.com/galleries/sports/relaxation/pics/tranquil_sunset.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body{
+  color: #ccc;
+  font-size: 16px;
+}
+#timeWrap{
+  width: 700px;
+  display: block;
+  margin:100px auto;
+  position: relative;
+  height: 400px;
+}
+#clock{
+  display: block;
+  width: 700px;
+  font-size: 8vw;
+  font-weight: 100;
+  margin: 80px 0 0 -15px;
+  position: absolute;
+  top:0px; left:0;
+}
+#date{
+  display: block;
+  width: 600px;
+  font-size: 4vw;
+  font-weight: 300;
+  margin: 40px auto;
+  position: absolute;
+  top:200px; left: 0;
+}
+@media only screen
+and (min-width : 320px)
+and (max-width : 480px) {
+  #timeWrap{
+    width:50%;
+  }
+  #clock{
+    margin: 40px 0 0px -5px;
+  }
+  #date{
+    margin: -80px 0 0px 0px;
+  }
+/* Styles */
+}
