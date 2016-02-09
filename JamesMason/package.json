@@ -25,7 +25,6 @@
   },
   "dependencies": {
     "express": "^4.13.4",
-    "jquery": "^2.2.0",
     "moment": "^2.11.2"
   }
 }
