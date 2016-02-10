@@ -39,4 +39,4 @@ gulp.task('watch', () => {
   return gulp.watch(files, ['lint', 'mocha']);
 });
 
-gulp.task('default', ['lint', 'mocha', 'html:dev']);
+gulp.task('default', ['lint', 'mocha', 'html:dev', 'webpack:dev']);

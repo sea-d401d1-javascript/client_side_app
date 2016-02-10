@@ -17,5 +17,9 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "webpack-stream": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "moment": "^2.11.2"
   }
 }
