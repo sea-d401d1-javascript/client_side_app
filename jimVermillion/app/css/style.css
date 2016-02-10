@@ -1,13 +1,45 @@
 body {
-    background: url(https://upload.wikimedia.org/wikipedia/commons/d/d9/Florida_Box_Turtle_Digon3a.jpg);
+    background: url(https://upload.wikimedia.org/wikipedia/commons/d/d9/Florida_Box_Turtle_Digon3a.jpg) no-repeat;
     background-size: cover;
+    color: white;
 }
 #time {
-  color: white;
-  background-color: gray;
+  background-color: rgba(50,50,50, 0.7);
   border: black 2px solid;
   border-radius: 10px;
-  margin: 20%;
+  margin: 0 20%;
   padding: 20px 0;
   text-align: center;
+}
+.buttons{
+  margin: 0 auto;
+  max-width: 25%;
+}
+button{
+  width:140px;
+  height:70px;
+  margin: 0 auto;
+  border:2px solid #34495e;
+  text-align:center;
+  cursor:pointer;
+  margin:0 0 40px 50px;
+  border-radius: 50px;
+  transition:all .5s ease;
+}
+button a{
+  font-size:30px;
+  text-decoration:none;
+  line-height:50px;
+  color: black;
+  transition:all .5s ease;
+  z-index:2;
+}
+button:hover a{
+  color:#fff;
+}
+button:hover{
+  width:150px;
+  height:80px;
+  transition:all .5s ease;
+  border:2px solid white;
 }

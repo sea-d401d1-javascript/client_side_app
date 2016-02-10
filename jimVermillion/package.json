@@ -10,6 +10,7 @@
   "author": "James Vermillion <jamesvermillion@yahoo.com> (https://github.com/jamesvermillion)",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.5.0",
     "css-loader": "^0.23.1",
     "express": "^4.13.4",
     "jquery": "^2.2.0",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-eslint": "^1.1.1",
+    "gulp-nodemon": "^2.0.6",
     "webpack-stream": "^3.1.0"
   }
 }
