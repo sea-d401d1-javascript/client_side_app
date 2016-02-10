@@ -1,0 +1,20 @@
+{
+  "name": "joshua_ho",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "express": "^4.13.4",
+    "moment": "^2.11.2",
+    "webpack-stream": "^3.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

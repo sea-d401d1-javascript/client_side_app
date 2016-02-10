@@ -1,0 +1,12 @@
+To Do for Client Side App Assignment:
+
+-Create an express server to serve up your client side application, remember that this is a
+different application than your server side application and hence has a different "server".
+
+-Create separate app and build folders.
+
+-Create a gulpfile that will both copy static html files from app to build and create a webpack bundle.
+
+-Create a client side app using webpack that
+  1. Displays the current time
+  2. Updates that time every second. 
