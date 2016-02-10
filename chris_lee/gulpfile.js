@@ -9,7 +9,6 @@ gulp.task('html:dev', () => {
 gulp.task('webpack:dev', () => {
   gulp.src(__dirname + '/app/js/client.js')
     .pipe(webpack({
-      watch: true,
       output: {
         filename: 'bundle.js'
       }
@@ -17,8 +16,5 @@ gulp.task('webpack:dev', () => {
     .pipe(gulp.dest('build/'));
 });
 
-// gulp.task('watch', function(){
-//   return gulp.watch('bundle.js', ['html:dev', 'webpack:dev']);
-// });
 gulp.task('build:dev', ['html:dev', 'webpack:dev']);
 gulp.task('default', ['build:dev']);
