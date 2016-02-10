@@ -6,11 +6,11 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     <link href='/css/style.css' rel='stylesheet' type='text/css'>
   </head>
-  <body data-ng-app>
-    <h1>Hello there, {{username}}!</h1>
-    <h2>The current time is: </h2>
-    <h2 id='time'></h2>
-    <input type='text' placeholder='What is your name?' data-ng-model='username'/>
+  <body data-ng-app='timeApp'>
+    <h1>The time is:</h1>
+    <h2 data-ng-controller='timeController'>{{time}}</h2>
+    <h3>Timezone: </h3>
+    <button id='minus'>-1</button><button id='add'>+1</button>
     <script src='bundle.js'></script>
   </body>
 </html>

@@ -1,10 +1,10 @@
 const angular = require('angular');
 const moment = require('moment');
+const timeApp = angular.module('timeApp', []);
 
-var displayTime = () => {
-  var currTime = moment().format('MMMM Do YYYY, h:mm:ss a');
-  document.getElementById('time').innerHTML = currTime;
-  setInterval(displayTime, 1000);
-};
-
-displayTime();
+timeApp.controller('timeController', ['$scope', '$interval', ($scope, $interval) => {
+  $interval(() => {
+    var PST = moment().format('MMMM Do YYYY, h:mm:ss a');
+    $scope.time = PST;
+  }, 1000);
+}]);

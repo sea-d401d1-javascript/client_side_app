@@ -10,3 +10,9 @@ h1 {
   margin-top: 2em;
   margin-bottom: 1em;
 }
+
+button{
+  font-size: 1em;
+  margin: 1em;
+  width: 2em;
+}
