@@ -4,8 +4,14 @@
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
-    <h1 id="currentTime"></h1>
-    <script src="bundle.js"></script>
+  <body data-ng-app="timeApp">
+      <main data-ng-controller="TimeController">
+      <h1 id="time"></h1>
+
+      <button data-ng-click="changeZone()">Change to New York time</button>
+      <button data-ng-click="localTime()">Change to local time</button>
+
+      <script src="bundle.js"></script>
+    </main>
   </body>
 </html>
