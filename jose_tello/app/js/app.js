@@ -1,11 +1,13 @@
+const angular = require('angular');
 const moment = require('moment');
 
-var getTime = () => {
-  var time = moment().format('MMMM Do YYYY, h:mm:ss a');
-  document.getElementById('time').innerHTML = time;
-};
+const timeApp = angular.module('timeApp', []);
 
-(function() {
-  getTime();
-  setInterval(getTime, 1000);
-})();
+timeApp.controller('timeController', ($scope, $interval) => {
+  $scope.callAtInterval = () => {
+    $scope.time = moment().format('MMMM Do YYYY, h:mm:ss a');
+  };
+  $interval(() => {
+    $scope.callAtInterval();
+  }, 1000);
+});
