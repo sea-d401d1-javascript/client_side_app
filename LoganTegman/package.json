@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha test"
+    "test": ""
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "angular": "^1.5.0",
+    "angular-animate": "^1.5.0",
+    "angular-aria": "^1.5.0",
+    "angular-material": "^1.0.5",
     "babel-core": "^6.5.1",
     "babel-eslint": "^4.1.8",
     "babel-loader": "^6.2.2",
@@ -18,7 +22,9 @@
     "eslint": "^1.10.3",
     "gulp": "^3.9.0",
     "gulp-eslint": "^1.1.1",
-    "moment": "^2.11.2"
+    "moment": "^2.11.2",
+    "webpack": "^1.12.13",
+    "webpack-stream": "^3.1.0"
   },
   "dependencies": {
     "express": "^4.13.3"

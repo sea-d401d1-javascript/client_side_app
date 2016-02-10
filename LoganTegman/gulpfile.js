@@ -43,6 +43,6 @@ gulp.task('watch', () => {
   gulp.watch([jsFiles, staticFiles], ['dev']);
 });
 
-gulp.task('dev', ['watch', 'lint', 'static:dev', 'build:dev']);
+gulp.task('dev', ['lint', 'static:dev', 'build:dev']);
 
-gulp.task('default', ['dev']);
+gulp.task('default', ['watch', 'dev']);
