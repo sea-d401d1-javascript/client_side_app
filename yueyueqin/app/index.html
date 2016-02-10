@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body data-ng-app>
+    <div ng-app="myApp">
+      <div ng-controller="time">
+        Date format: <input ng-model="format" /> <hr/>
+        Current time is: <span my-current-time="format"></span>
+      </div>
+   </div>
+  <script src = "bundle.js"></script>
+  </body>
+</html>
