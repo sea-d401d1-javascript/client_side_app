@@ -4,13 +4,26 @@
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body data-ng-app>
-    <div ng-app="myApp">
-      <div ng-controller="time">
-        Date format: <input ng-model="format" /> <hr/>
+  <body>
+    <main data-ng-app="myApp">
+      <section data-ng-controller="time">
+        Date format: <input data-ng-model="format" /> <hr/>
         Current time is: <span my-current-time="format"></span>
-      </div>
-   </div>
+      </section>
+      <br>
+      <br>
+      <hr>
+      <section data-ng-controller="timeZone">
+        <button ng-click="addOneHour()">
+            add 1 hour
+        </button>
+        <button ng-click="minusOneHour()">
+            Minus 1 hour
+        </button>
+
+        Time is for different time zone: <span current-time-zone></span>
+      </section>
+   </main>
   <script src = "bundle.js"></script>
   </body>
 </html>
