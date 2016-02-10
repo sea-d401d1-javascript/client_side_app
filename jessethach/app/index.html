@@ -5,7 +5,22 @@
     <title></title>
   </head>
   <body>
-    <p id="timer"></p>
+
+    <main>
+      <section ng-app="timeApp">
+        <article ng-controller='timeAppController'>
+          <p>{{ clock | date:'HH:mm:ss'}}</p>
+          <button ng-click="addHour()">CST</button>
+          <button ng-click="subtractHour()">HST</button>
+        </article>
+
+        <article>
+          <h2>{{hourForward}}</h2>
+        </article>
+      </section>
+
+    </main>
+
     <script src="bundle.js"></script>
   </body>
 </html>
