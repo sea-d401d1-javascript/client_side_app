@@ -24,5 +24,9 @@ gulp.task('webpack-js:dev', () => {
     .pipe(gulp.dest('build/'));
 });
 
+gulp.task('watch', () => {
+  gulp.watch(__dirname + 'app/js/client.js', ['build']);
+});
+
 gulp.task('build:dev', ['webpack-js:dev', 'html:dev', 'css:dev']);
 gulp.task('default', ['build:dev']);

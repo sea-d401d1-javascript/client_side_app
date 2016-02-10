@@ -6,12 +6,17 @@
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:200,300,900' rel='stylesheet' type='text/css'>
   <link href="styles.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body data-ng-app="timeApp">
 
-  <div id="timeWrap">
-    <div id="clock"></div>
-    <div id="date"></div>
-  </div>
+  <main data-ng-controller="clockController">
+    <section id="timeWrap">
+      <div id="clock">{{ clock }}</div>
+      <div id="date">{{ date }}</div>
+    </section>
+
+    <button ng-click="myAddFunction()">Click me to change time zone!</button>
+    <button ng-click="mySubFunction()">Click me to change time zone!</button>
+  </main>
 
 <script src="bundle.js"></script>
 
