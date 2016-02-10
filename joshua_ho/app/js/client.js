@@ -1,37 +1,48 @@
 const angular = require('angular');
 const moment = require('moment');
 
-function getTime () {
-  var time = moment().format('MMMM Do YYYY, h:mm:ss a');
-  return time;
-};
 // Special stuff I am learning
 var myApp = angular.module('myApp' , [])
-  .controller('TimeController', ['$scope',
-    ($scope) => {
-      $scope.format = 'M/m/yy h:mm:ss a';
+  .controller('TimeController', ['$scope', '$interval', ($scope , $interval) => {
+
+    var t = moment().format();
+    var tick = function () {
+      t = moment().format('HH:mm:ss a');
+      $scope.clock = $scope.newTime || t;
     }
-  ])
-  .directive('time' , ['$interval' ,
-    ($interval) => {
-      return (scope , element , attrs) => {
-        var stopTime;
-        function updateTime(){
-          element.text(moment().format('h:mm:ss a'));
-        }
-        scope.$watch(attrs.time , () => {
-          updateTime();
-        });
-        stopTime = $interval(updateTime , 1000);
-      };
+    $scope.startTick = function() {
+      $interval(tick,1000);
+    }
+    $scope.addTime = function () {
+      $scope.newTime = t.add(1 , 'h');
+    }
+    $scope.subtractTime = function () {
+      t = moment().format().subtract(1 , 'H');
+      $scope.startTick();
+    }
+
+    $scope.startTick();
+
     }
   ]);
+  // .directive('time' , ['$interval' , function ($interval) {
+  //     return function (scope , element , attrs) {
+  //       var stopTime;
+  //       function updateTime(){
+  //         element.text(moment().format('h:mm:ss a'));
+  //       }
+  //
+  //       scope.$watch(attrs.time , () => {
+  //         updateTime();
+  //       });
+  //
+  //       stopTime = $interval(updateTime , 1000);
+  //
+  //     };
+  //   }
+  // ]);
 
-  // $scope.time = getTime();
-  // ( function() {
-  // $scope.time = getTime();
-  // return $scope.time;
-  // } , 1000);
+
 
 
 
