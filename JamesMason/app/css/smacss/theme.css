@@ -1,0 +1,30 @@
+/*
+  Paletton Color Palette
+  http://paletton.com/palette.php?uid=12P0u0kjWiiZSskYHwP006Ndg00
+*/
+
+/* Base */
+html {
+  background-color: #000;
+}
+
+/* Layout */
+.locales h3, .timezones h3 {
+  color: #00B500;
+}
+.locales button, .timezones button {
+  color: #00B500;
+  background-color: #2B2B2B;
+  border: 0px solid #000;
+}
+
+/* Module */
+#clock {
+  color: #00CD00;
+}
+
+/* State */
+.locales button:hover, .timezones button:hover {
+  color: #00CD00;
+  background-color: #000;
+}
