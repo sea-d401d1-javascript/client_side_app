@@ -5,7 +5,11 @@
   <title>Client Side App</title>
 </head>
 <body ng-app="timeApp">
-  <h1 id="time" ng-controller="timeController" style="text-align:center">{{time}}</h1>
+  <section ng-controller="timeController" style="text-align:center">
+    <h1>{{time}}</h1>
+    <button ng-click="subtractTime()" type="button">-1</button>
+    <button ng-click="addTime()" type="button">+1</button>
+  </section>
   <script src="bundle.js" type="text/javascript"></script>
 </body>
 </html>
