@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Third WebPack App with Angular</title>
+    <script type="text/javascript" src="bundle.js"></script>
+  </head>
+
+  <!-- Angular is funcional as of 11:14 AM -->
+
+  <body data-ng-app="myApp">
+    <div data-ng-controller="TimeController">
+      <h1>Hello. The time is: </h1>
+      <h2>{{clock | date:'HH:mm:ss'}}</h2>
+      <button type="button" ng-click="addTime()">Add Hour</button>
+      <button type="button" ng-click="subtractTime()">Subtract Hour</button>
+    </div>
+    <h1>{{greeting}}</h1>
+    <input type="text" data-ng-model="greeting">
+  </body>
+</html>
