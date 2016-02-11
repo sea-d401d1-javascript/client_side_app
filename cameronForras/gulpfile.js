@@ -7,7 +7,7 @@ gulp.task('html:dev', () => {
 });
 
 gulp.task('webpack:dev', () => {
-  gulp.src(__dirname + '/app/js/index.js')
+  gulp.src(__dirname + '/app/js/controller.js')
     .pipe(webpack({
       output: {
         filename: 'bundle.js'
