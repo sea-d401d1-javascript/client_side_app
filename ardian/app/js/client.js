@@ -9,22 +9,12 @@ dayApp.controller('dayAppController', ['$scope', function($scope) {
 
 dayApp.controller('dateAppController', ['$scope', '$interval', function($scope, $interval) {
   $interval(() => {
-    $scope.dateNtime = moment().format('MMMM Do YYYY, h:mm:ss a');
-    setInterval(1000);
+    $scope.pacificTime = moment().format('MMMM Do YYYY, h:mm:ss a');
+    $scope.mountainTime = moment().add(1, 'h').format('MMMM Do YYYY, h:mm:ss a');
+    $scope.centralTime = moment().add(2, 'h').format('MMMM Do YYYY, h:mm:ss a');
+    $scope.easternTime = moment().add(3, 'h').format('MMMM Do YYYY, h:mm:ss a');
+    $scope.alaskaTime = moment().subtract(1, 'h').format('MMMM Do YYYY, h:mm:ss a');
+    $scope.hawaiiTime = moment().subtract(2, 'h').format('MMMM Do YYYY, h:mm:ss a');
+    setInterval(1000)
   });
 }]);
-
-// var getDay = () => {
-//   var day = moment().format('dddd');
-//   document.getElementById('day').innerHTML = day;
-// };
-//
-// var getTime = () => {
-//   var time = moment().format('MMMM Do YYYY, h:mm:ss a');
-//   document.getElementById('time').innerHTML = time;
-//   setInterval(getTime, 1000);
-// };
-//
-//
-// getDay();
-// getTime();

@@ -2,31 +2,34 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>dateNtime</title>
   </head>
   <body data-ng-app="dayApp">
+
     <h1 ng-controller="dayAppController" style="text-align:center;">{{ currentDay }}</h1>
-    <h1 ng-controller="dateAppController" style="text-align:center;">{{ dateNtime }}</h1>
+
+    <section ng-controller="dateAppController">
+      <section>
+        <h1 data-ng-show="zone === 1" style="text-align:center;">{{ pacificTime }}</h1>
+        <h1 data-ng-show="zone === 2" style="text-align:center;">{{ mountainTime }}</h1>
+        <h1 data-ng-show="zone === 3" style="text-align:center;">{{ centralTime }}</h1>
+        <h1 data-ng-show="zone === 4" style="text-align:center;">{{ easternTime }}</h1>
+        <h1 data-ng-show="zone === 5" style="text-align:center;">{{ alaskaTime }}</h1>
+        <h1 data-ng-show="zone === 6" style="text-align:center;">{{ hawaiiTime }}</h1>
+      </section>
+
+      <section align="center">
+        <button type="button" data-ng-click="zone = 1" align="center;">Pacific Time</button>
+        <button type="button" data-ng-click="zone = 2" align="center;">Mountain Time</button>
+        <button type="button" data-ng-click="zone = 3" align="center;">Central Time</button>
+        <button type="button" data-ng-click="zone = 4" align="center;">Eastern Time</button>
+        <button type="button" data-ng-click="zone = 5" align="center;">Alaska Time</button>
+        <button type="button" data-ng-click="zone = 6" align="center;">Hawaii Time</button>
+      </section>
+
+    </section>
+
 
     <script src="bundle.js"></script>
   </body>
 </html>
-
-
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body data-ng-app>
-    <h1 style="font-size:100px; text-align:center;">Welcome!</h1>
-    <h1 id="day" style="text-align:center;"></h1>
-    <h1 id="time" style="text-align:center"></h1>
-    <h1>Hello {{name}}</h1>
-
-      <input type="text" data-ng-model="name" placeholder="Enter your name">
-
-    <script src="bundle.js"></script>
-  </body>
-</html> -->
