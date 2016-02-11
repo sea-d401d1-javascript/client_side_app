@@ -21,9 +21,13 @@
   "devDependencies": {
     "angular": "^1.5.0",
     "gulp": "^3.9.1",
+    "gulp-eslint": "^1.1.1",
+    "moment": "^2.11.2",
     "webpack-stream": "^3.1.0"
   },
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "jquery": "^2.2.0",
+    "moment-timezone": "^0.5.0"
   }
 }
