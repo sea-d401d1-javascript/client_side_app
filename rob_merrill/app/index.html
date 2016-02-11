@@ -1,24 +1,3 @@
-<!-- <html lang="en">
-<head>
-  <meta charset="UTF-8"> -->
-  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
-<!--   <title></title>
-</head>
-<body data-ng-app="ngAppClock">
-  <div ng-controller="ngAppClockController" ng-init="zone = 1">
-    <h1>MY CLOCK</h1>
-    <button data-ng-click="zone = 1">Pacific Time (Our time)</button>
-    <button data-ng-click="zone = 2">Alaska Time (1hour behind)</button>
-    <button data-ng-click="zone = 3">Mountain Time (1hour ahead)</button>
-    <h2 data-ng-show="zone === 1" ng-cloak>Pacific Time: {{ clock }}</h2>
-    <h2 data-ng-show="zone === 2" ng-cloak>Alaska Time: {{ clockAK }}</h2>
-    <h2 data-ng-show="zone === 3" ng-cloak>Mountain Time: {{ clockMT }}</h2>
-  </div>
-  <script src="bundle.js"></script>
-</body>
-</html>
- -->
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -30,9 +9,9 @@
      <h1>The Time is...</h1>
 
       <button data-ng-click="zone = 1">Pacific Time (Our time)</button>
-      <button data-ng-click="zone = 2">Alaska Time (1 hour behind)</button>
+      <button data-ng-click="zone = 2">New York Time (3 hours ahead)</button>
       <h2 data-ng-show="zone === 1" ng-cloak>Pacific Time: {{ clock }}</h2>
-      <h2 data-ng-show="zone === 2" ng-cloak>Alaska Time: {{ clockAK }}</h2>
+      <h2 data-ng-show="zone === 2" ng-cloak>New York Time: {{ clockNY }}</h2>
     </div>
 
       <script src="bundle.js"></script>

@@ -5,7 +5,7 @@ angular.module('ngAppClock', []).controller('ngAppClockController', ['$scope', '
 
   $interval(function() {
     $scope.clock = moment().format('MMMM Do YYYY, h:mm:ss a');
-    $scope.clockAK = moment().subtract(1, "h").format('MMMM Do YYYY, h:mm:ss a');
+    $scope.clockNY = moment().add(3, "h").format('MMMM Do YYYY, h:mm:ss a');
   }, 1000);
 }]);
 
