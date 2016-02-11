@@ -1,0 +1,19 @@
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+h1 {
+  color: gold;
+}
+
+h2 {
+  color: silver;
+}
+
+body {
+  background-image: url("http://i.kinja-img.com/gawker-media/image/upload/bwr62518kjnqgejq9nkv.jpg");
+}
+
+div {
+	background-color: black;
+}
