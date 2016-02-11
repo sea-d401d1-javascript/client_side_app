@@ -1,10 +1,11 @@
+const angular = require('angular');
 const moment = require('moment');
-const $ = require('jquery');
 
- $(function(){
-    setInterval(function(){
-      $('#clock').text(moment().format("h:mm:ss A"));
-    });
-  });
+angular.module('ngAppClock', []).controller('ngAppClockController', ['$scope', '$interval', function($scope, $interval) {
 
-  $('#date').text(moment().format('MMMM Do YYYY'));
+  $interval(function() {
+    $scope.clock = moment().format('MMMM Do YYYY, h:mm:ss a');
+    $scope.clockAK = moment().subtract(1, "h").format('MMMM Do YYYY, h:mm:ss a');
+  }, 1000);
+}]);
+
