@@ -1,0 +1,21 @@
+{
+  "name": "client_side_app",
+  "version": "1.0.0",
+  "description": "an express server that serves up client side application",
+  "main": "server.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test",
+    "start": "node server.js"
+  },
+  "author": "Sabrina Tee",
+  "license": "MIT",
+  "devDependencies": {
+    "angular": "^1.5.0",
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "webpack-stream": "^3.1.0"
+  },
+  "dependencies": {
+    "moment": "^2.11.2"
+  }
+}
