@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Time is in our hands!</title>
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:200,300,900' rel='stylesheet' type='text/css'>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body data-ng-app="timeApp">
+
+  <main data-ng-controller="timeController" ng-init="tZ = 1">
+
+    <section id="timeWrap">
+      <div id="clock" ng-show="tZ === 1" ng-cloak>{{ clock }}</div>
+      <div id="clock" ng-show="tZ === 2" ng-cloak>{{ clockAhead }}</div>
+      <div id="clock" ng-show="tZ === 3" ng-cloak>{{ clockBehind }}</div>
+      <div id="date">{{ date }}</div>
+    </section>
+
+    <button ng-click="tZ = 1">PST</button>
+    <button ng-click="tZ = 2">MT</button>
+    <button ng-click="tZ = 3">AK</button>
+
+  </main>
+
+<script src="bundle.js"></script>
+
+</body>
+</html>
