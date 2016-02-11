@@ -18,7 +18,7 @@ gulp.task('webpack:dev', () => {
 });
 
 gulp.task('lint', () => {
-  return gulp.src(__dirname + '/app/js/client.js')
+  return gulp.src(__dirname + '/app/js/*.js')
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());

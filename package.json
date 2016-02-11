@@ -1,7 +1,7 @@
 {
   "name": "Erika_client_side_app",
   "version": "1.0.0",
-  "description": "##To Submit this Assignment   * fork this repository   * write all of your code in a folder containing your name   * push to your repository   * submit a pull request to this repository   * submit a link to your PR in canvas",
+  "description": "Client-side app",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -26,8 +26,6 @@
     "webpack-stream": "^3.1.0"
   },
   "dependencies": {
-    "express": "^4.13.4",
-    "jquery": "^2.2.0",
-    "moment-timezone": "^0.5.0"
+    "express": "^4.13.4"
   }
 }
