@@ -11,7 +11,8 @@
     "ga": true,
     "jQuery": true,
     "router": true,
-    "Handlebars": true
+    "Handlebars": true,
+    "jsonParser": true
   },
   "rules": {
     "comma-dangle": 2,
@@ -145,7 +146,6 @@
       }
     ],
     "max-nested-callbacks": 0,
-    "new-cap": 1,
     "new-parens": 2,
     "no-array-constructor": 2,
     "no-inline-comments": 0,
