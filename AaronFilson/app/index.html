@@ -16,6 +16,16 @@
       </p>
       <section>
         {{theTime}}
+        <p>
+          <button name="Time Zone Minus (West)" data-ng-click='timeZoneWest()'>Time Zone Minus (West)</button>
+          <button name="Time Zone Plus (East)" data-ng-click='timeZoneEast()'>Time Zone Plus (East)</button>
+        </p>
+
+        <p>
+          Time Zone : {{timeZone}}
+          <br>
+          Client Time : {{clientTime}}
+        </p>
       </section>
     </main>
 
