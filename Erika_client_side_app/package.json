@@ -1,0 +1,31 @@
+{
+  "name": "Erika_client_side_app",
+  "version": "1.0.0",
+  "description": "Client-side app",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikawho/client_side_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erikawho/client_side_app/issues"
+  },
+  "homepage": "https://github.com/erikawho/client_side_app#readme",
+  "devDependencies": {
+    "angular": "^1.5.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^1.1.1",
+    "moment": "^2.11.2",
+    "webpack-stream": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
