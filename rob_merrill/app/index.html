@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>What time is it!!</title>
+</head>
+<body data-ng-app="ngAppClock">
+
+    <main ng-controller="ngAppClockController" ng-init="zone 1">
+     <p>The Time is...</p>
+
+      <button data-ng-click="zone = 1">Pacific Time (Our time)</button>
+      <button data-ng-click="zone = 2">New York Time (3 hours ahead)</button>
+      <h2 data-ng-show="zone === 1" ng-cloak>Pacific Time: {{ clock }}</h2>
+      <h2 data-ng-show="zone === 2" ng-cloak>New York Time: {{ clockNY }}</h2>
+    </main>
+
+      <script src="bundle.js"></script>
+</body>
+</html>
+
+

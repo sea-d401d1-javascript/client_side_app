@@ -1,0 +1,29 @@
+
+html {
+  background: url("https://images.unsplash.com/photo-1455202335449-c7ba6e0ce1d4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=5b484f7e7b3c5696e4c321732d3fc13a") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+
+h2 {
+  color: #000;
+}
+
+p {
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
+}
+
+button {
+  padding: 10px 15px;
+  background: #4479BA;
+  color: #FFF;
+}
+
