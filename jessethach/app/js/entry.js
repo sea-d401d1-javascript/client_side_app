@@ -45,3 +45,47 @@ jedisApp.controller('jedisController', ['$scope', '$http', ($scope, $http) => {
   }
 
 }]);
+
+jedisApp.controller('sithlordsController', ['$scope', '$http', ($scope, $http) => {
+  $scope.greeting = 'hello world';
+  $scope.sithlords = [];
+
+  $http.get('http://localhost:3000/api/sith-lords')
+    .then((res) => {
+      console.log('success!');
+      $scope.sithlords = res.data;
+    }, (err) => {
+      console.log(err);
+    });
+
+  $scope.createSith = function(sith) {
+    $http.post('http://localhost:3000/api/sith-lords', sith)
+      .then((res) => {
+        $scope.sithlords.push(res.data);
+        $scope.newSith = null;
+      }, (err) => {
+        console.log(err);
+      })
+  }
+
+  $scope.deleteSith = function(sith) {
+    $http.delete('http://localhost:3000/api/sith-lords/' + sith._id)
+      .then((res) => {
+        $scope.sithlords = $scope.sithlords.filter((i) => i !== sith);
+      }, (err) => {
+        console.log(err)
+      })
+  }
+
+  $scope.updateSith = function(sith) {
+    $http.put('http://localhost:3000/api/sith-lords/' + sith._id, sith)
+      .then((res) => {
+        $scope.sithlords[$scope.sithlords.indexof(sith)] = sith;
+        sith.editting = false;
+      }, (err) => {
+        console.log(err);
+        $scope.editting = false;
+      })
+  }
+
+}]);

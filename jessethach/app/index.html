@@ -1,26 +1,62 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Super Jedi Stream Adventure</title>
+</head>
+<body data-ng-app="jedisApp">
+  <section data-ng-controller="jedisController">
+    <h1>Jedis:</h1>
+    <ul>
+      <li data-ng-repeat="jedi in jedis">{{jedi.name}}, {{jedi.lightsaberColor}}, {{jedi.world}}, {{jedi.status}}
+        <button data-ng-click="deleteJedi(jedi)">Delete Jedi</button>
+        <button data-ng-click="jedi.editting = !jedi.editting">Update Jedi</button>
+        <form data-ng-if="jedi.editting" data-ng-submit="updateJedi(jedi)">
+          <input data-ng-model="jedi.name" type="text"/>
+          <input data-ng-model="jedi.lightsaberColor" type="text"/>
+          <input data-ng-model="jedi.world" type="text"/>
+          <input data-ng-model="jedi.status" type="text"/>
+          <button type="submit">Update</button>
+        </form>
+      </li>
+    </ul>
+    <form data-ng-submit="createJedi(newJedi)">
+      <input data-ng-model="newJedi.name" type="text" placeholder="Name"/>
+      <input data-ng-model="newJedi.lightsaberColor" type="text" placeholder="Light Saber Color"/>
+      <input data-ng-model="newJedi.world" type="text" placeholder="World"/>
+      <input data-ng-model="newJedi.status" type="text" placeholder="Status"/>
+      <button type="submit">New Jedi</button>
+    </form>
+      <p>{{jedis}}</p>
 
-    <main>
-      <section ng-app="timeApp">
-        <article ng-controller='timeAppController'>
-          <p>{{ clock | date:'HH:mm:ss'}}</p>
-          <button ng-click="addHour()">Add Hour</button>
-          <button ng-click="subtractHour()">Subtract Hour</button>
-        </article>
+  </section>
 
-        <article>
-          <h2>{{hourForward}}</h2>
-        </article>
-      </section>
+  <section data-ng-controller="sithlordsController">
+    <h1>Sith Lords:</h1>
+    <ul>
+      <li data-ng-repeat="sith in sithlords">{{sith.name}}, {{sith.lightsaberColor}}, {{sith.world}}, {{sith.status}}
+        <button data-ng-click="deleteSith(sith)">Delete Sith</button>
+        <button data-ng-click="sith.editting = !sith.editting">Update Sith</button>
+        <form data-ng-if="sith.editting" data-ng-submit="updateSith(sith)">
+          <input data-ng-model="sith.name" type="text"/>
+          <input data-ng-model="sith.lightsaberColor" type="text"/>
+          <input data-ng-model="sith.world" type="text"/>
+          <input data-ng-model="sith.status" type="text"/>
+          <button type="submit">Update</button>
+        </form>
+      </li>
+    </ul>
+    <form data-ng-submit="createSith(newSith)">
+      <input data-ng-model="newSith.name" type="text" placeholder="Name"/>
+      <input data-ng-model="newSith.lightsaberColor" type="text" placeholder="Light Saber Color"/>
+      <input data-ng-model="newSith.world" type="text" placeholder="World"/>
+      <input data-ng-model="newSith.status" type="text" placeholder="Status"/>
+      <button type="submit">New Sith</button>
+    </form>
+      <p>{{sithlords}}</p>
 
-    </main>
+  </section>
 
-    <script src="bundle.js"></script>
-  </body>
+  <script src="bundle.js"></script>
+</body>
 </html>
