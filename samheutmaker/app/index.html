@@ -6,10 +6,10 @@
 	<script src="bundle.js"></script>
 </head>
 <body data-ng-app="timerApp">
-	<div data-ng-controller="TimeController"
+	<section data-ng-controller="TimeController"
 	style="
-	position: relative; 
-	width: 400px; 
+	position: relative;
+	width: 400px;
 	margin: 0 auto 0 auto;
 	color: lightblue;
 	font-size: 60px;
@@ -17,7 +17,8 @@
 	top: 300px;
 	">
 		{{currentTime}}
-	</div>
-		
+
+	<button role="button" data-ng-click="changeTime()">Change Time</button>
+	</section>
 </body>
 </html>
