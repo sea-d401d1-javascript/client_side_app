@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const webpack = require('webpack-stream');
+const nodemon = require('gulp-nodemon');
 
 gulp.task('html:dev', () => {
   gulp.src(__dirname + '/app/**/*.html')
@@ -17,6 +18,17 @@ gulp.task('webpack:dev', () => {
     .pipe(gulp.dest(__dirname + '/build/'));
 });
 
+gulp.task('develop', function () {
+  nodemon({
+    script: 'server.js',
+    ext: 'html js',
+    env: { 'NODE_ENV': 'development' }
+  })
+    .on('restart', function () {
+      console.log('restarted!')
+    })
+});
+
 gulp.task('lint', () => {
   return gulp.src(__dirname + '/app/js/client.js')
     .pipe(eslint())
@@ -25,4 +37,11 @@ gulp.task('lint', () => {
 });
 
 gulp.task('build:dev', ['webpack:dev', 'html:dev']);
-gulp.task('default', ['build:dev', 'lint']);
+
+gulp.task('watch', function() {
+    gulp.watch(['app/js/client.js', 'app/index.html', 'app/css/style.css'], ['build:dev']);
+    // gulp.watch(['app/js/client.js', 'app/index.html'], ['develop']);
+});
+
+
+gulp.task('default', ['build:dev', 'lint', 'watch']);
