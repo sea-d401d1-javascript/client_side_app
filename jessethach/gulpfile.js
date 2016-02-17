@@ -26,9 +26,27 @@ gulp.task('lint', () => {
     .pipe(eslint.format());
 });
 
+gulp.task('webpack:test', () => {
+  gulp.src(__dirname + '/test/test_entry.js')
+    .pipe(webpack({
+      output: {
+        filename: 'test_bundle.js'
+      },
+      module: {
+        loaders: [
+          {
+            test: /\.js$/,
+            loader: 'babel?presets[]=es2015'
+          }
+        ]
+      }
+    }))
+    .pipe(gulp.dest('test/'));
+});
+
 gulp.task('watch', () => {
   gulp.watch([jsFiles, staticFiles], ['dev']);
 });
 
-gulp.task('dev', ['watch', 'lint', 'html:dev', 'webpack:dev']);
-gulp.task('default', ['dev']);
+gulp.task('build:dev', ['watch', 'lint', 'html:dev', 'webpack:dev']);
+gulp.task('default', ['build:dev']);

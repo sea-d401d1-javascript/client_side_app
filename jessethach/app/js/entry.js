@@ -2,17 +2,19 @@ const angular = require('angular');
 
 const jedisApp = angular.module('jedisApp', []);
 
-jedisApp.controller('jedisController', ['$scope', '$http', ($scope, $http) => {
+jedisApp.controller('JedisController', ['$scope', '$http', ($scope, $http) => {
   $scope.greeting = 'hello world';
   $scope.jedis = [];
 
-  $http.get('http://localhost:3000/api/jedis')
-    .then((res) => {
-      console.log('success!');
-      $scope.jedis = res.data;
-    }, (err) => {
-      console.log(err);
-    });
+  $scope.getAll = () => {
+    $http.get('http://localhost:3000/api/jedis')
+      .then((res) => {
+        console.log('success!');
+        $scope.jedis = res.data;
+      }, (err) => {
+        console.log(err);
+      });
+  }
 
   $scope.createJedi = function(jedi) {
     $http.post('http://localhost:3000/api/jedis', jedi)
@@ -21,8 +23,8 @@ jedisApp.controller('jedisController', ['$scope', '$http', ($scope, $http) => {
         $scope.newJedi = null;
       }, (err) => {
         console.log(err);
-      })
-  }
+      });
+  };
 
   $scope.deleteJedi = function(jedi) {
     $http.delete('http://localhost:3000/api/jedis/' + jedi._id)
@@ -30,8 +32,8 @@ jedisApp.controller('jedisController', ['$scope', '$http', ($scope, $http) => {
         $scope.jedis = $scope.jedis.filter((i) => i !== jedi);
       }, (err) => {
         console.log(err)
-      })
-  }
+      });
+  };
 
   $scope.updateJedi = function(jedi) {
     $http.put('http://localhost:3000/api/jedis/' + jedi._id, jedi)
@@ -41,22 +43,24 @@ jedisApp.controller('jedisController', ['$scope', '$http', ($scope, $http) => {
       }, (err) => {
         console.log(err);
         $scope.editting = false;
-      })
-  }
+      });
+  };
 
 }]);
 
-jedisApp.controller('sithlordsController', ['$scope', '$http', ($scope, $http) => {
+jedisApp.controller('SithlordsController', ['$scope', '$http', ($scope, $http) => {
   $scope.greeting = 'hello world';
   $scope.sithlords = [];
 
-  $http.get('http://localhost:3000/api/sith-lords')
-    .then((res) => {
-      console.log('success!');
-      $scope.sithlords = res.data;
-    }, (err) => {
-      console.log(err);
-    });
+  $scope.getAll = () => {
+    $http.get('http://localhost:3000/api/sith-lords')
+      .then((res) => {
+        console.log('success!');
+        $scope.sithlords = res.data;
+      }, (err) => {
+        console.log(err);
+      });
+  };
 
   $scope.createSith = function(sith) {
     $http.post('http://localhost:3000/api/sith-lords', sith)
@@ -65,8 +69,8 @@ jedisApp.controller('sithlordsController', ['$scope', '$http', ($scope, $http) =
         $scope.newSith = null;
       }, (err) => {
         console.log(err);
-      })
-  }
+      });
+  };
 
   $scope.deleteSith = function(sith) {
     $http.delete('http://localhost:3000/api/sith-lords/' + sith._id)
@@ -74,8 +78,8 @@ jedisApp.controller('sithlordsController', ['$scope', '$http', ($scope, $http) =
         $scope.sithlords = $scope.sithlords.filter((i) => i !== sith);
       }, (err) => {
         console.log(err)
-      })
-  }
+      });
+  };
 
   $scope.updateSith = function(sith) {
     $http.put('http://localhost:3000/api/sith-lords/' + sith._id, sith)
@@ -85,7 +89,7 @@ jedisApp.controller('sithlordsController', ['$scope', '$http', ($scope, $http) =
       }, (err) => {
         console.log(err);
         $scope.editting = false;
-      })
-  }
+      });
+  };
 
 }]);
