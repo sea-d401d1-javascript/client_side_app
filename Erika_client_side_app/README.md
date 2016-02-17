@@ -12,3 +12,4 @@ How to check the time.
   4. Enter in Terminal: node server.js
   5. In browser, enter localhost:5000
   6. Click on time zone
+  7. Be on time, profit!
