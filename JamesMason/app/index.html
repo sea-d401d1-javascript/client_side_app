@@ -2,13 +2,33 @@
 <html lang="en">
   <head>
   	<meta charset="UTF-8">
-  	<title>Clock</title>
-     <link rel="stylesheet" href="css/style.css" media="all">
+    <meta name="description" content="A clock built using AngularJS.">
+    <meta name="keywords" content="clock, angular">
+    <meta name="author" content="James Mason">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  	<title>AngularJS Clock</title>
+    <link rel="stylesheet" href="css/style.css" media="all" type="text/css" title="Client Application Stylesheet">
   </head>
-  <body ng-app="clock">
-    <script src="js/bundle.min.js"></script>
-      <div ng-controller="clockController" id="clock">
-        <span time></span>
-      </div>
+  <body>
+    <main data-ng-app="clock" title="Angular Application">
+    <script src="js/bundle.min.js" type="text/javascript" title="Webpack Javascript Bundle"></script>
+      <section data-ng-controller="clockController" id="clock" title="Clock Application">
+        <time data-ng-attr-datetime="{{datetime}}" data-ng-attr-lang="{{lang}}" title="Clock" time></time>
+        <section class="locales" title="Clock Locale Options">
+          <h3>Locales</h3>
+          <button title="English (US) Locale Button" data-ng-click="setLocale('en')">English (US)</button>
+          <button title="Spanish Locale Button" data-ng-click="setLocale('es')">Spanish</button>
+          <button title="French (FR) Locale Button" data-ng-click="setLocale('fr')">French (FR)</button>
+          <button title="Chinese (Simplified) Locale Button" data-ng-click="setLocale('zh-cn')">Chinese (Simplified)</button>
+        </section>
+        <section class="timezones" title="Clock Timezone Options">
+          <h3>United States Timezones</h3>
+          <button title="US Pacific Timezone Button" data-ng-click="setUTC('us-pst')">Pacific</button>
+          <button title="US Mountain Timezone Button" data-ng-click="setUTC('us-mst')">Mountain</button>
+          <button title="US Central Timezone Button" data-ng-click="setUTC('us-cst')">Central</button>
+          <button title="US Eastern Timezone Button" data-ng-click="setUTC('us-est')">Eastern</button>
+        </section>
+      </section>
+    </main>
   </body>
 </html>
