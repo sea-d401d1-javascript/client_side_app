@@ -1,0 +1,9 @@
+html {
+  background-color: black;
+}
+#clock {
+  color: green;
+  text-align:center;
+  font-size: 36px;
+  margin-top: 20%;
+}
