@@ -12,6 +12,7 @@ describe('jedis controller', () => {
   var $httpBackend;//takes parameters from user such a GET request and returns a promise
   var $scope;
   var $ControllerConstructor;
+  var jedi;
 
   beforeEach(angular.mock.module('jedisApp'));
 
@@ -24,7 +25,7 @@ describe('jedis controller', () => {
     var jedisController = $ControllerConstructor('JedisController', {$scope});
       expect(typeof jedisController).toBe('object');
       expect(Array.isArray($scope.jedis)).toBe(true);
-      expect(typeof $scope.getAll).toBe('function');
+      expect(typeof $scope.getAllJedi).toBe('function');
 
   });
 
@@ -41,7 +42,7 @@ describe('jedis controller', () => {
 
     it('should make a get request to /api/jedis', () => {
       $httpBackend.expectGET('http://localhost:3000/api/jedis').respond(200, [{name: 'test jedi'}]);
-      $scope.getAll();
+      $scope.getAllJedi();
       $httpBackend.flush();
       expect($scope.jedis.length).toBe(1);
       expect(Array.isArray($scope.jedis)).toBe(true);
@@ -56,6 +57,23 @@ describe('jedis controller', () => {
         expect($scope.jedis.length).toBe(1);
         expect($scope.newJedi).toBe(null);
         expect($scope.jedis[0].name).toBe('the response jedi');
+    });
+
+    it('should be able to update a jedi', () => {
+      var jedi = {_id: 1, editting: true};
+      $httpBackend.expectPUT('http://localhost:3000/api/jedis' + '/1').respond(200);
+      $scope.updateJedi(jedi);
+      $httpBackend.flush();
+      expect(jedi.editting).toBe(false);
+    });
+
+    it('should be able to delete a jedi', () => {
+      var jedi = {_id: 1, name: 'test jedi'};
+      $scope.jedis = [jedi];
+      $httpBackend.expectDELETE('http://localhost:3000/api/jedis' + '/1').respond(200);
+      $scope.deleteJedi(jedi);
+      $httpBackend.flush();
+      expect($scope.jedis.length).toBe(0);
     });
 
   });

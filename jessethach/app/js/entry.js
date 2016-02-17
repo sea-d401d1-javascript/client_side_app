@@ -6,7 +6,7 @@ jedisApp.controller('JedisController', ['$scope', '$http', ($scope, $http) => {
   $scope.greeting = 'hello world';
   $scope.jedis = [];
 
-  $scope.getAll = () => {
+  $scope.getAllJedi = () => {
     $http.get('http://localhost:3000/api/jedis')
       .then((res) => {
         console.log('success!');
@@ -14,7 +14,7 @@ jedisApp.controller('JedisController', ['$scope', '$http', ($scope, $http) => {
       }, (err) => {
         console.log(err);
       });
-  }
+  };
 
   $scope.createJedi = function(jedi) {
     $http.post('http://localhost:3000/api/jedis', jedi)
@@ -38,11 +38,11 @@ jedisApp.controller('JedisController', ['$scope', '$http', ($scope, $http) => {
   $scope.updateJedi = function(jedi) {
     $http.put('http://localhost:3000/api/jedis/' + jedi._id, jedi)
       .then((res) => {
-        $scope.jedis[$scope.jedis.indexof(jedi)] = jedi;
+        // $scope.jedis[$scope.jedis.indexof(jedi)] = jedi;
         jedi.editting = false;
       }, (err) => {
         console.log(err);
-        $scope.editting = false;
+        jedi.editting = false;
       });
   };
 
@@ -52,7 +52,7 @@ jedisApp.controller('SithlordsController', ['$scope', '$http', ($scope, $http) =
   $scope.greeting = 'hello world';
   $scope.sithlords = [];
 
-  $scope.getAll = () => {
+  $scope.getAllSith = () => {
     $http.get('http://localhost:3000/api/sith-lords')
       .then((res) => {
         console.log('success!');
@@ -84,7 +84,6 @@ jedisApp.controller('SithlordsController', ['$scope', '$http', ($scope, $http) =
   $scope.updateSith = function(sith) {
     $http.put('http://localhost:3000/api/sith-lords/' + sith._id, sith)
       .then((res) => {
-        $scope.sithlords[$scope.sithlords.indexof(sith)] = sith;
         sith.editting = false;
       }, (err) => {
         console.log(err);

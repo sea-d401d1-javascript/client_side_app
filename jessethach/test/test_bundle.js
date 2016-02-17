@@ -71,6 +71,7 @@
 	  var $httpBackend; //takes parameters from user such a GET request and returns a promise
 	  var $scope;
 	  var $ControllerConstructor;
+	  var jedi;
 
 	  beforeEach(angular.mock.module('jedisApp'));
 
@@ -83,7 +84,7 @@
 	    var jedisController = $ControllerConstructor('JedisController', { $scope: $scope });
 	    expect(typeof jedisController === 'undefined' ? 'undefined' : _typeof(jedisController)).toBe('object');
 	    expect(Array.isArray($scope.jedis)).toBe(true);
-	    expect(_typeof($scope.getAll)).toBe('function');
+	    expect(_typeof($scope.getAllJedi)).toBe('function');
 	  });
 
 	  describe('REST requests', function () {
@@ -99,7 +100,7 @@
 
 	    it('should make a get request to /api/jedis', function () {
 	      $httpBackend.expectGET('http://localhost:3000/api/jedis').respond(200, [{ name: 'test jedi' }]);
-	      $scope.getAll();
+	      $scope.getAllJedi();
 	      $httpBackend.flush();
 	      expect($scope.jedis.length).toBe(1);
 	      expect(Array.isArray($scope.jedis)).toBe(true);
@@ -114,6 +115,23 @@
 	      expect($scope.jedis.length).toBe(1);
 	      expect($scope.newJedi).toBe(null);
 	      expect($scope.jedis[0].name).toBe('the response jedi');
+	    });
+
+	    it('should be able to update a jedi', function () {
+	      var jedi = { _id: 1, editting: true };
+	      $httpBackend.expectPUT('http://localhost:3000/api/jedis' + '/1').respond(200);
+	      $scope.updateJedi(jedi);
+	      $httpBackend.flush();
+	      expect(jedi.editting).toBe(false);
+	    });
+
+	    it('should be able to delete a jedi', function () {
+	      var jedi = { _id: 1, name: 'test jedi' };
+	      $scope.jedis = [jedi];
+	      $httpBackend.expectDELETE('http://localhost:3000/api/jedis' + '/1').respond(200);
+	      $scope.deleteJedi(jedi);
+	      $httpBackend.flush();
+	      expect($scope.jedis.length).toBe(0);
 	    });
 	  });
 	});
@@ -132,7 +150,7 @@
 	  $scope.greeting = 'hello world';
 	  $scope.jedis = [];
 
-	  $scope.getAll = function () {
+	  $scope.getAllJedi = function () {
 	    $http.get('http://localhost:3000/api/jedis').then(function (res) {
 	      console.log('success!');
 	      $scope.jedis = res.data;
@@ -162,11 +180,11 @@
 
 	  $scope.updateJedi = function (jedi) {
 	    $http.put('http://localhost:3000/api/jedis/' + jedi._id, jedi).then(function (res) {
-	      $scope.jedis[$scope.jedis.indexof(jedi)] = jedi;
+	      // $scope.jedis[$scope.jedis.indexof(jedi)] = jedi;
 	      jedi.editting = false;
 	    }, function (err) {
 	      console.log(err);
-	      $scope.editting = false;
+	      jedi.editting = false;
 	    });
 	  };
 	}]);
@@ -175,7 +193,7 @@
 	  $scope.greeting = 'hello world';
 	  $scope.sithlords = [];
 
-	  $scope.getAll = function () {
+	  $scope.getAllSith = function () {
 	    $http.get('http://localhost:3000/api/sith-lords').then(function (res) {
 	      console.log('success!');
 	      $scope.sithlords = res.data;
@@ -205,7 +223,6 @@
 
 	  $scope.updateSith = function (sith) {
 	    $http.put('http://localhost:3000/api/sith-lords/' + sith._id, sith).then(function (res) {
-	      $scope.sithlords[$scope.sithlords.indexof(sith)] = sith;
 	      sith.editting = false;
 	    }, function (err) {
 	      console.log(err);
@@ -18858,7 +18875,7 @@
 	    var sithlordsController = $ControllerConstructor('SithlordsController', { $scope: $scope });
 	    expect(typeof sithlordsController === 'undefined' ? 'undefined' : _typeof(sithlordsController)).toBe('object');
 	    expect(Array.isArray($scope.sithlords)).toBe(true);
-	    expect(_typeof($scope.getAll)).toBe('function');
+	    expect(_typeof($scope.getAllSith)).toBe('function');
 	  });
 
 	  describe('REST requests', function () {
@@ -18874,7 +18891,7 @@
 
 	    it('should make a get request to /api/sithlords', function () {
 	      $httpBackend.expectGET('http://localhost:3000/api/sith-lords').respond(200, [{ name: 'test sith' }]);
-	      $scope.getAll();
+	      $scope.getAllSith();
 	      $httpBackend.flush();
 	      expect($scope.sithlords.length).toBe(1);
 	      expect(Array.isArray($scope.sithlords)).toBe(true);
@@ -18889,6 +18906,23 @@
 	      expect($scope.sithlords.length).toBe(1);
 	      expect($scope.newSith).toBe(null);
 	      expect($scope.sithlords[0].name).toBe('the response sith');
+	    });
+
+	    it('should be able to update a sith', function () {
+	      var sith = { _id: 1, editting: true };
+	      $httpBackend.expectPUT('http://localhost:3000/api/sith-lords' + '/1').respond(200);
+	      $scope.updateSith(sith);
+	      $httpBackend.flush();
+	      expect(sith.editting).toBe(false);
+	    });
+
+	    it('should be able to delete a sith', function () {
+	      var sith = { _id: 1, name: 'test sith' };
+	      $scope.sithlords = [sith];
+	      $httpBackend.expectDELETE('http://localhost:3000/api/sith-lords' + '/1').respond(200);
+	      $scope.deleteSith(sith);
+	      $httpBackend.flush();
+	      expect($scope.sithlords.length).toBe(0);
 	    });
 	  });
 	});

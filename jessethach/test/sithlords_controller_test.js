@@ -24,7 +24,7 @@ describe('sithlords controller', () => {
     var sithlordsController = $ControllerConstructor('SithlordsController', {$scope});
       expect(typeof sithlordsController).toBe('object');
       expect(Array.isArray($scope.sithlords)).toBe(true);
-      expect(typeof $scope.getAll).toBe('function');
+      expect(typeof $scope.getAllSith).toBe('function');
 
   });
 
@@ -41,7 +41,7 @@ describe('sithlords controller', () => {
 
     it('should make a get request to /api/sithlords', () => {
       $httpBackend.expectGET('http://localhost:3000/api/sith-lords').respond(200, [{name: 'test sith'}]);
-      $scope.getAll();
+      $scope.getAllSith();
       $httpBackend.flush();
       expect($scope.sithlords.length).toBe(1);
       expect(Array.isArray($scope.sithlords)).toBe(true);
@@ -56,6 +56,23 @@ describe('sithlords controller', () => {
         expect($scope.sithlords.length).toBe(1);
         expect($scope.newSith).toBe(null);
         expect($scope.sithlords[0].name).toBe('the response sith');
+    });
+
+    it('should be able to update a sith', () => {
+      var sith = {_id: 1, editting: true};
+      $httpBackend.expectPUT('http://localhost:3000/api/sith-lords' + '/1').respond(200);
+      $scope.updateSith(sith);
+      $httpBackend.flush();
+      expect(sith.editting).toBe(false);
+    });
+
+    it('should be able to delete a sith', () => {
+      var sith = {_id: 1, name: 'test sith'};
+      $scope.sithlords = [sith];
+      $httpBackend.expectDELETE('http://localhost:3000/api/sith-lords' + '/1').respond(200);
+      $scope.deleteSith(sith);
+      $httpBackend.flush();
+      expect($scope.sithlords.length).toBe(0);
     });
 
   });
