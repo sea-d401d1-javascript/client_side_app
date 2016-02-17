@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Time!</title>
+  </head>
+  <body data-ng-app='timeApp'>
+    <main data-ng-controller='timeController'>
+
+      <h3>The time is : </h3>
+      <p>
+        Stop!
+      </p>
+      <p>
+        Angular Time!
+      </p>
+      <section>
+        {{theTime}}
+        <p>
+          <button name="Time Zone Minus (West)" data-ng-click='timeZoneWest()'>Time Zone Minus (West)</button>
+          <button name="Time Zone Plus (East)" data-ng-click='timeZoneEast()'>Time Zone Plus (East)</button>
+        </p>
+
+        <p>
+          Time Zone : {{timeZone}}
+          <br>
+          Client Time : {{clientTime}}
+        </p>
+      </section>
+    </main>
+
+    <script src='bundle.js'></script>
+  </body>
+</html>
