@@ -6,11 +6,12 @@
 </head>
 <body data-ng-app="timeApp">
 		<div ng-controller="timeAppController">
-			<h1>25 or 6 to 4?</h1>
+			<h1 style="text-align:center">25 or 6 to 4?</h1>
+			<h2>{{ currentDay }}</h2>
 			<section>
 				<button data-ng-click="zone = 1">Pacific Standard Time</button>
 				<button data-ng-click="zone = 2">Mountain Standard Time</button>
-				<button data-ng-click="zone = 3">centralTime Standard Time</button>
+				<button data-ng-click="zone = 3">Central Standard Time</button>
 				<button data-ng-click="zone = 4">Eastern Standard Time</button>
 				<button data-ng-click="zone = 5">Alaskan Standard Time</button>
 				<button data-ng-click="zone = 6">Hawaiian Standard Time</button>
