@@ -2,10 +2,33 @@ body {
     color: white;
     align: center;
 }
+#adjust {
+  color: black;
+  text-align: center;
+}
 #time {
   background-color: grey;
   border: black 2px solid;
   margin: 0 20%;
   padding: 20px 0;
   text-align: center;
+}
+.buttons{
+  margin: 0 auto;
+  max-width: 25%;
+}
+button{
+  width:140px;
+  height:70px;
+  margin: 0 auto;
+  border:2px solid #34495e;
+  text-align:center;
+  margin:0 0 40px 50px;
+  border-radius: 50px;
+}
+button a{
+  font-size:30px;
+  text-decoration:none;
+  line-height:50px;
+  color: black;
 }

@@ -4,9 +4,14 @@
   <meta charset="UTF-8">
   <title>It's Time</title>
 </head>
-<body>
-  <main>
-    <h1 id="time"></h1>
+<body data-ng-app="app">
+  <main data-ng-controller="appController">
+    <section class="buttons">
+      <button data-ng-click="up()"><a href="">+</a></button>
+      <p id="adjust">Adjust for your time zone</p>
+      <button data-ng-click="down()"><a href="">-</a></button>
+    </section>
+    <h1 id="time">{{time}}</h1>
   </main>
   <script src="bundle.js"></script>
 </body>

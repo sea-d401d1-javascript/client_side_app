@@ -43,4 +43,4 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('default', ['build:dev', 'lint']);
+gulp.task('default', ['build:dev', 'lint', 'watch']);
