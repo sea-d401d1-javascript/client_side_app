@@ -1,0 +1,20 @@
+body {
+  font-family: 'Garamond;
+  text-align: center;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 3em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h2 {
+  margin-bottom: -1em;
+  font-size: 1em;
+}
+
+h3 {
+  font-size: 2em;
+}

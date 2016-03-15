@@ -1,0 +1,26 @@
+{
+  "name": "client_side_app",
+  "version": "1.0.0",
+  "description": "Client side app ",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test",
+    "start": "node server.js"
+  },
+  "author": "Gene Troy",
+  "license": "ISC",
+  "dependencies": {
+   "angular": "^1.5.0",
+   "css-loader": "^0.23.1",
+   "express": "^4.13.4",
+   "jquery": "^2.2.0",
+   "moment": "^2.11.2",
+   "style-loader": "^0.13.0"
+ },
+ "devDependencies": {
+   "gulp": "^3.9.1",
+   "gulp-eslint": "^1.1.1",
+   "gulp-nodemon": "^2.0.6",
+   "webpack-stream": "^3.1.0"
+ }
+}
