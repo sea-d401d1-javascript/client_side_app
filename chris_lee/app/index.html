@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body data-ng-app="timeApp">
+      <main data-ng-controller="TimeController">
+      <h1 id="time"></h1>
+
+      <button data-ng-click="localTime()">Back to Seattle time</button>
+
+      <form>Select Time Zone:
+        <select ng-model="zoneSelected" ng-change="changeZone(zoneSelected)" data-ng-options="zone as zone.city for zone in zones">
+          <option value=''>Select Zone</option>
+        </select>
+      </form>
+
+      <script src="bundle.js"></script>
+    </main>
+  </body>
+</html>
