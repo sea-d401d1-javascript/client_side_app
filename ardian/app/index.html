@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>dateNtime</title>
+  </head>
+  <body data-ng-app="dayApp">
+
+    <h1 ng-controller="dayAppController" style="text-align:center;">{{ currentDay }}</h1>
+
+    <section ng-controller="dateAppController">
+      <section>
+        <h1 data-ng-show="zone === 1" style="text-align:center;">{{ pacificTime }}</h1>
+        <h1 data-ng-show="zone === 2" style="text-align:center;">{{ mountainTime }}</h1>
+        <h1 data-ng-show="zone === 3" style="text-align:center;">{{ centralTime }}</h1>
+        <h1 data-ng-show="zone === 4" style="text-align:center;">{{ easternTime }}</h1>
+        <h1 data-ng-show="zone === 5" style="text-align:center;">{{ alaskaTime }}</h1>
+        <h1 data-ng-show="zone === 6" style="text-align:center;">{{ hawaiiTime }}</h1>
+      </section>
+
+      <section align="center">
+        <button type="button" data-ng-click="zone = 1" align="center;">Pacific Time</button>
+        <button type="button" data-ng-click="zone = 2" align="center;">Mountain Time</button>
+        <button type="button" data-ng-click="zone = 3" align="center;">Central Time</button>
+        <button type="button" data-ng-click="zone = 4" align="center;">Eastern Time</button>
+        <button type="button" data-ng-click="zone = 5" align="center;">Alaska Time</button>
+        <button type="button" data-ng-click="zone = 6" align="center;">Hawaii Time</button>
+      </section>
+
+    </section>
+
+
+    <script src="bundle.js"></script>
+  </body>
+</html>
