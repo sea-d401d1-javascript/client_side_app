@@ -2,22 +2,21 @@ const angular = require('angular');
 
 var app = angular.module('myApp', []);
 
-app.controller('MyController', ($scope, $interval) => {
+app.controller('MyController', ['$scope', '$interval', ($scope, $interval) => {
+  $scope.count = 0;
   var tick = function() {
-    $scope.CurrentTime = Date.now();
+    $scope.CurrentTime = Date.now() + $scope.count;
   }
-  tick();
-  $interval(tick,1000);
 
   $scope.addHour = function() {
-    var now = new Date();
-    var newTime = new Date(now.getTime() + (1000*60*60));
-    $scope.CurrentTime = newTime;
+    $scope.count += (1000*60*60);
+    tick();
   }
 
   $scope.subtractHour = function() {
-    var now = new Date();
-    var newTime = new Date(now.getTime() - (1000*60*60));
-    $scope.CurrentTime = newTime;
+    $scope.count -= (1000*60*60);
+    tick();
   }
-});
+
+  $interval(tick, 1000);
+}]);

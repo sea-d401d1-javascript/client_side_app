@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Current Time</title>
-    
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="time.css">
   </head>
   <body>
-    <div ng-app="myApp" ng-controller="MyController">
-      <u>Time</u><span>{{CurrentTime | date:'hh:mm:ss'}}</span>
-      <button data-ng-click="addHour()">Add Hour</button>
-      <button data-ng-click="subtractHour()">Subtract Hour</button>
-    </div>
+    <main ng-app="myApp" ng-controller="MyController">
+      <strong class="timeHead" ng-cloak>Time</strong><section class="currentTime" ng-cloak>{{CurrentTime | date:'hh:mm:ss'}}</section>
+      <button data-ng-click="addHour()" class="button1" >Add Hour</button>
+      <button data-ng-click="subtractHour()" class="button2" >Subtract Hour</button>
+    </main>
     <script src="bundle.js"></script>
   </body>
 </html>

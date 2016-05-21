@@ -1,0 +1,74 @@
+[ng\:cloak], [ng-cloak], .ng-cloak{
+  display:none !important;
+}
+body {
+  background-image: url(http://widewallpaper.info/wp-content/uploads/2016/01/flat-wallpaper.png);
+  background-color: black;
+  background-position: center top;
+  background-repeat: no-repeat;
+  font-family: 'Raleway', sans-serif;
+}
+.timeHead{
+  color:white;
+  font-size: 50px;
+  position: center;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -200px;
+}
+.currentTime{
+  color:white;
+  font-size: 85px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -200px;
+}
+.button1{
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -200px;
+  background-color:#96BE8D;
+  -moz-border-radius:28px;
+  -webkit-border-radius:28px;
+  border-radius:28px;
+  border:1px solid #C0DABB;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-size:17px;
+  padding:16px 31px;
+}
+.button2{
+  position: fixed;
+  top: 70%;
+  left: 65%;
+  margin-top: -100px;
+  margin-left: -200px;
+  background-color:#96BE8D;
+  -moz-border-radius:28px;
+  -webkit-border-radius:28px;
+  border-radius:28px;
+  border:1px solid #C0DABB;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-size:17px;
+  padding:16px 31px;
+}
+
+/*Code below causes the clock buttons to no longer add or subtract hours*/
+
+/*.button1:hover, .button2:hover {
+  background-color:#6DA162;
+  position: fixed;
+}
+.button1:active, .button2:active {
+  position:fixed;
+  top:1px;
+}*/
