@@ -5,7 +5,7 @@
 	<title>Super Jedi Stream Adventure</title>
 </head>
 <body data-ng-app="jedisApp">
-  <section data-ng-controller="jedisController">
+  <section data-ng-controller="JedisController" data-ng-init="getAllJedi()">
     <h1>Jedis:</h1>
     <ul>
       <li data-ng-repeat="jedi in jedis">{{jedi.name}}, {{jedi.lightsaberColor}}, {{jedi.world}}, {{jedi.status}}
@@ -31,7 +31,7 @@
 
   </section>
 
-  <section data-ng-controller="sithlordsController">
+  <section data-ng-controller="SithlordsController" data-ng-init="getAllSith()">
     <h1>Sith Lords:</h1>
     <ul>
       <li data-ng-repeat="sith in sithlords">{{sith.name}}, {{sith.lightsaberColor}}, {{sith.world}}, {{sith.status}}
